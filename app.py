@@ -8,7 +8,7 @@ import io
 model = tf.keras.models.load_model("Model")
 
 # Load the tokenizer
-with open('Tokenizer\sentiment_tokenizer.json') as f:
+with open('Tokenizer/sentiment_tokenizer.json') as f:
     data = json.load(f)
     tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(data)
 
