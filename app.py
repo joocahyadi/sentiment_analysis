@@ -5,10 +5,10 @@ import json
 import io
 
 # Load the deep learning model
-model = tf.keras.models.load_model("D:\Data Science\Projects\Sentiment Analysis\Model")
+model = tf.keras.models.load_model("Model")
 
 # Load the tokenizer
-with open('D:\Data Science\Projects\Sentiment Analysis\Tokenizer\sentiment_tokenizer.json') as f:
+with open('Tokenizer\sentiment_tokenizer.json') as f:
     data = json.load(f)
     tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(data)
 
