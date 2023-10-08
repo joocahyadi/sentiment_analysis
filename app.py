@@ -9,10 +9,10 @@ import io
 def load_english_model():
 
     # Load the deep learning model
-    english_model = tf.keras.models.load_model('English/Model')
+    english_model = tf.keras.models.load_model('D:\Data Science\Projects\Sentiment Analysis\English\Model')
 
     # Load the tokenizer
-    with open('English/sentiment_tokenizer.json') as f:
+    with open('D:\Data Science\Projects\Sentiment Analysis\English\sentiment_tokenizer.json') as f:
         english_data = json.load(f)
         english_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(english_data)
 
@@ -22,10 +22,10 @@ def load_english_model():
 def load_indonesian_model():
 
     # Load the deep learning model
-    indonesian_model = tf.keras.models.load_model('Indonesian/Model')
+    indonesian_model = tf.keras.models.load_model('D:\Data Science\Projects\Sentiment Analysis\Indonesian\Model')
 
     # Load the tokenizer
-    with open('Indonesian/indonesian_tokenizer.json') as f:
+    with open('D:\Data Science\Projects\Sentiment Analysis\Indonesian\indonesian_tokenizer.json') as f:
         indonesian_data = json.load(f)
         indonesian_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(indonesian_data)
 
@@ -36,6 +36,20 @@ def load_indonesian_model():
 # Streamlit App
 # Define the UI
 st.title("Sentiment Classifier")
+
+st.write(
+    """
+    Welcome to the Sentiment Classifier Web Application!
+    This web application will help you to determine the sentiment of the texts or sentences that you have.
+    
+    You can follow these three simple steps to use this application:
+    1. Select the type of your sentence's language (currently this web app only supports two types of language (English and Indonesian)
+    2. Input your texts or sentences (for the best quality answer from the model, it is advised that the sentences are around 500 - 1000 words)
+    3. Press the "Give me the sentiment type!" button
+    
+    and voila! The result will come in a couple of seconds!
+    """
+)
 
 # Create a dropdown for model selection
 model_selection = st.selectbox('Select the Language Model:', ['English', 'Indonesian'])
@@ -82,6 +96,6 @@ def model_prediction(input_text):
             return 'Negative'
 
 # Create the prediction button and start the inference process
-if st.button("Predict"):
+if st.button("Give me the sentiment type!"):
     prediction = model_prediction(user_input)
     st.write('Prediction result: ', prediction)
