@@ -9,10 +9,10 @@ import io
 def load_english_model():
 
     # Load the deep learning model
-    english_model = tf.keras.models.load_model('D:\Data Science\Projects\Sentiment Analysis\English\Model')
+    english_model = tf.keras.models.load_model('English/Model')
 
     # Load the tokenizer
-    with open('D:\Data Science\Projects\Sentiment Analysis\English\sentiment_tokenizer.json') as f:
+    with open('English/sentiment_tokenizer.json') as f:
         english_data = json.load(f)
         english_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(english_data)
 
@@ -22,10 +22,10 @@ def load_english_model():
 def load_indonesian_model():
 
     # Load the deep learning model
-    indonesian_model = tf.keras.models.load_model('D:\Data Science\Projects\Sentiment Analysis\Indonesian\Model')
+    indonesian_model = tf.keras.models.load_model('Indonesian/Model')
 
     # Load the tokenizer
-    with open('D:\Data Science\Projects\Sentiment Analysis\Indonesian\indonesian_tokenizer.json') as f:
+    with open('Indonesian/indonesian_tokenizer.json') as f:
         indonesian_data = json.load(f)
         indonesian_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(indonesian_data)
 
